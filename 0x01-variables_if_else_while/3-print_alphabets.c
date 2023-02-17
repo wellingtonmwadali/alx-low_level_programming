@@ -1,18 +1,16 @@
 #include <stdio.h>
 /**
- * main - A programs that alphabets in lower cases
- * Return:0 (success)
+ * main - A program that prints upper and lowercase
+ * Return:0 (Success)
 */
 int main(void)
-
 {
-	char lc = "a"
+	char ch;
 
-	while (lc <= "z")
-	{
-		putchar(lc);
-		lc++;
-	}
-	putchar('\n');
+	for (ch = 'a'; ch <= 'z'; ch++)
+		putchar(ch);
+	for (ch = 'A'; ch <= 'Z'; ch++)
+		putchar(ch);
+	putchar("\n");
 	return (0);
 }
