@@ -55,10 +55,10 @@ int main(int argc, char *argv[])
 	i = close(file_from);
 			if (i == -1)
 			{
-			 dprintf(STDERR_FILENO, "Errot:Can't close fd %d\n", file_from);
-			 exit(100);
-}
-return (0);
+				dprintf(STDERR_FILENO, "Errot:Can't close fd %d\n", file_from);
+				exit(100);
+			}
+			return (0);
 }
 
 
