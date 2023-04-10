@@ -21,29 +21,29 @@ void err_file(int file_from, int file_to, char *argv[])
 	}
 }
 /**
- * main - copyy from one file to another
+ * main - copy from one file to another
  * @argv: argument vector
  * @argc: argument count
  *
- * Return: alwyas 0
+ * Return: always 0
  */
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, i;
 	ssize_t a, b;
-	char bufferaaaa[1024];
+	char buffer[1024];
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to")
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
 			exit(97);
 	}
-	file_from = open(argv[1],O_RDONLY);
-	file_to = open(argv[2], O_CREAT | O_WRONLY |O_APPEND, 0664);
+	file_from = open(argv[1], O_RDONLY);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_APPEND, 0664);
 	err_file(file_from, file_to, argv);
 
 	a = 1024;
-	while (a ==1024)
+	while (a == 1024)
 	{
 		a = read(file_from, buffer, 1024);
 		if (a == -1)
@@ -52,13 +52,13 @@ int main(int argc, char *argv[])
 		if (b == -1)
 			err_file(0, -1, argv);
 	}
-	i = close(file_from;
-			if (1 == -1)
-			(
+	i = close(file_from);
+			if (i == -1)
+			{
 			 dprintf(STDERR_FILENO, "Errot:Can't close fd %d\n", file_from);
 			 exit(100);
-			 }
-			 return(0);
-			 }
+}
+return (0);
+}
 
 
