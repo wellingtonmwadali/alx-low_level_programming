@@ -1,20 +1,29 @@
 #include "main.h"
 /**
- * main - check how the code is
- * @ac: 1st parameter
- * @av: 2nd parameter
- * Return: always 0
+ * append_text_to_file -appends text at the end
+ * @filename: name of the file to be appended
+ * @text_content: string to add at the end of string
+ * Return: 1 for success or -1 for failure
+ *
  */
-int main(int ac, char **av)
+int append_text_to_file(const char *filename, char *text_content)
 	{
-	int abc;
+	int abc = 0, a = 0, b = 0;
 
-	if (ac != 3)
+	if (filename == NULL)
+		return (-1);
+	abc = open(filename, O_WRONLY | O_APPEND);
+	if (abc < 0)
+		return (-1);
+	if (text_content)
 	{
-		dprintf(2, "Usage: %s filename text\n", av[0]);
-		exit(1);
+		while (text_content[b])
+			b++;
+		a = write(abc, text_content, b);
+		if (a < 0)
+			return (-1);
 	}
-	abc = append_text_to_file(av[1], av[2]);
-	printf("-> %i)\n", abc);
-	return (0);
-}
+	close(abc);
+	return (1);
+	}
+
