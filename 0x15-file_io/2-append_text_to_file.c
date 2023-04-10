@@ -6,7 +6,7 @@
  * Return: always 0
  */
 int main(int ac, char **av)
-{
+	{
 	int abc;
 
 	if (ac != 3)
